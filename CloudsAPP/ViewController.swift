@@ -23,24 +23,8 @@ class ViewController: UIViewController {
                     return
             }
             
-            guard let origin = dictionary["origin"] as? String else {
-                return
-            }
-            
-            print("origin: \(origin)")
-            
-            guard let url = dictionary["url"] as? String else {
-                return
-            }
-            
-            print("url: \(url)")
-            
-            //在初始化物件時，輸入物件變數用的資料
-            let httpbinOrgJson = HttpbinOrgJson(origin: origin, url: url)
-            print(httpbinOrgJson)
-            
-            let httpbinOrgJson2 = HttpbinOrgJson()
-            print(httpbinOrgJson2)
+            let httpbinOrgJson3 = try? HttpbinOrgJson(dictionary: dictionary)
+            print(httpbinOrgJson3 as Any)
         }
     }
     
