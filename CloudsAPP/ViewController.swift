@@ -16,38 +16,38 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         Alamofire.request("https://api.github.com/users/octocat/repos").responseJSON { response in
-            
+
             //更符合內容的命名變數名稱為 result_value
-            guard let result_value = response.result.value
+            guard let result_value = response.result.value,
+                let array = result_value as? [Any]//將 result_value 解讀為 任何型態 的陣列
                 else {
                     return
             }
             
-                if let array = result_value as? [Any] {//將 result_value 解讀為 任何型態 的陣列
-//                    if let JSON_OBJECT = array.first {//將陣列的第1個 JSON 物件 做解析
-                    for JSON_OBJECT in array {
-                        if let dictionary = JSON_OBJECT as? [String: Any] {//將 JSON 物件轉成 key-value 陣列
-                            
-                            if let value = dictionary["id"] as? Int {
-                                print("id: \(value)")
-                            }
-                            
-                            if let value = dictionary["name"] as? String {
-                                print("name: \(value)")
-                            }
-                            
-                            if let value = dictionary["private"] as? Bool {
-                                print("private: \(value)")
-                            }
-                            
-                            if let value = dictionary["homepage"] as? String {
-                                print("homepage: \(value)")
-                            } else {
-                                print("homepage: null")//不知道原始格式之下的處理
-                            }
-                        }
-                    }
+            for JSON_OBJECT in array {//將陣列中的 每1個 JSON 物件 做解析
+                guard let dictionary = JSON_OBJECT as? [String: Any]//將 JSON 物件轉成 key-value 陣列
+                    else {
+                        return
                 }
+                    
+                if let value = dictionary["id"] as? Int {
+                    print("id: \(value)")
+                }
+                
+                if let value = dictionary["name"] as? String {
+                    print("name: \(value)")
+                }
+                
+                if let value = dictionary["private"] as? Bool {
+                    print("private: \(value)")
+                }
+                
+                if let value = dictionary["homepage"] as? String {
+                    print("homepage: \(value)")
+                } else {
+                    print("homepage: null")//不知道原始格式之下的處理
+                }
+            }
         }
         
         Alamofire.request("https://httpbin.org/get").responseJSON { response in
