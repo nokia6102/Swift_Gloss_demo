@@ -12,6 +12,12 @@ struct HttpbinOrgJson {
 //    }
 }
 
+//定義要 throw 的訊息
+enum DecodeJsonError: Error {
+    case missing(String)
+    case invalid(String, Any)
+}
+
 extension HttpbinOrgJson {
     
     init() {//寫在這就不會影響
@@ -20,10 +26,14 @@ extension HttpbinOrgJson {
     }
     
     init(dictionary: [String: Any]) throws {
-        guard let origin = dictionary["origin"] as? String,
-            let url = dictionary["url"] as? String else {
-//                return//未初始化不能使用 return, 改用 throw
-                throw 0 as! Error
+        guard let origin = dictionary["origin"] as? String
+            else {
+                throw DecodeJsonError.missing("origin")
+        }
+        
+        guard let url = dictionary["url"] as? String
+            else {
+                throw DecodeJsonError.missing("url")
         }
         
         self.origin = origin
