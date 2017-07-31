@@ -15,21 +15,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        Alamofire.request("https://httpbin.org/get").responseJSON { response in
-            
-            guard let JSON_OBJECT = response.result.value,
-                let dictionary = JSON_OBJECT as? [String: Any]
-                else {
-                    return
-            }
-            
-            //throw 的呼叫需要加 try
-//            let httpbinOrgJson3 = try? HttpbinOrgJson(dictionary: dictionary)
-//            print(httpbinOrgJson3 as Any)
-            
-            let httpbinOrgJson3 = HttpbinOrgJson(dictionary: dictionary)
-            print(httpbinOrgJson3 as Any)
-        }
+        //希望重構程式到用以下一行即可處理 JSON 的取得
+        ApiGithubComJson.fetch()//使用這個方法時，其實物件還沒初始化
     }
     
     override func didReceiveMemoryWarning() {

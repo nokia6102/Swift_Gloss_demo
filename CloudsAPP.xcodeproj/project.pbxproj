@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		271F4F2C1F2ED7D20089B39D /* httpbin.org.json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F4F2B1F2ED7D20089B39D /* httpbin.org.json.swift */; };
+		271F4F371F2F06B00089B39D /* api.github.com.json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271F4F361F2F06B00089B39D /* api.github.com.json.swift */; };
 		27B5551E1F259ADA00A8D200 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B5551D1F259ADA00A8D200 /* AppDelegate.swift */; };
 		27B555201F259ADA00A8D200 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B5551F1F259ADA00A8D200 /* ViewController.swift */; };
 		27B555231F259ADA00A8D200 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27B555211F259ADA00A8D200 /* Main.storyboard */; };
@@ -92,6 +93,7 @@
 
 /* Begin PBXFileReference section */
 		271F4F2B1F2ED7D20089B39D /* httpbin.org.json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = httpbin.org.json.swift; sourceTree = "<group>"; };
+		271F4F361F2F06B00089B39D /* api.github.com.json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = api.github.com.json.swift; sourceTree = "<group>"; };
 		27B5551A1F259ADA00A8D200 /* CloudsAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudsAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27B5551D1F259ADA00A8D200 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27B5551F1F259ADA00A8D200 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				27B555261F259ADA00A8D200 /* LaunchScreen.storyboard */,
 				27B555291F259ADA00A8D200 /* Info.plist */,
 				271F4F2B1F2ED7D20089B39D /* httpbin.org.json.swift */,
+				271F4F361F2F06B00089B39D /* api.github.com.json.swift */,
 			);
 			path = CloudsAPP;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				271F4F371F2F06B00089B39D /* api.github.com.json.swift in Sources */,
 				27B555201F259ADA00A8D200 /* ViewController.swift in Sources */,
 				27B5551E1F259ADA00A8D200 /* AppDelegate.swift in Sources */,
 				271F4F2C1F2ED7D20089B39D /* httpbin.org.json.swift in Sources */,
