@@ -18,7 +18,11 @@ class ViewController: UIViewController {
         Alamofire.request("https://api.github.com/users/octocat/repos").responseJSON { response in
             
             //更符合內容的命名變數名稱為 result_value
-            if let result_value = response.result.value {
+            guard let result_value = response.result.value
+                else {
+                    return
+            }
+            
                 if let array = result_value as? [Any] {//將 result_value 解讀為 任何型態 的陣列
 //                    if let JSON_OBJECT = array.first {//將陣列的第1個 JSON 物件 做解析
                     for JSON_OBJECT in array {
@@ -44,7 +48,6 @@ class ViewController: UIViewController {
                         }
                     }
                 }
-            }
         }
         
         Alamofire.request("https://httpbin.org/get").responseJSON { response in
