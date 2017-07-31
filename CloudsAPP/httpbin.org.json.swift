@@ -25,15 +25,30 @@ extension HttpbinOrgJson {
         self.url = "內部設定初始值"
     }
     
-    init(dictionary: [String: Any]) throws {
+//    init(dictionary: [String: Any]) throws {
+//        guard let origin = dictionary["origin"] as? String
+//            else {
+//                throw DecodeJsonError.missing("origin")
+//        }
+//        
+//        guard let url = dictionary["url"] as? String
+//            else {
+//                throw DecodeJsonError.missing("url")
+//        }
+//        
+//        self.origin = origin
+//        self.url = url
+//    }
+    
+    init?(dictionary: [String: Any]) {
         guard let origin = dictionary["origin"] as? String
             else {
-                throw DecodeJsonError.missing("origin")
+                return nil
         }
         
         guard let url = dictionary["url"] as? String
             else {
-                throw DecodeJsonError.missing("url")
+                return nil
         }
         
         self.origin = origin
