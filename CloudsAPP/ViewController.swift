@@ -23,6 +23,7 @@ class ViewController: UIViewController {
                     return
             }
             
+            //throw 的呼叫需要加 try
             let httpbinOrgJson3 = try? HttpbinOrgJson(dictionary: dictionary)
             print(httpbinOrgJson3 as Any)
         }

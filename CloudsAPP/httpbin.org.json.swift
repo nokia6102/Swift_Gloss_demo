@@ -22,7 +22,7 @@ extension HttpbinOrgJson {
     init(dictionary: [String: Any]) throws {
         guard let origin = dictionary["origin"] as? String,
             let url = dictionary["url"] as? String else {
-//                return
+//                return//未初始化不能使用 return, 改用 throw
                 throw 0 as! Error
         }
         
