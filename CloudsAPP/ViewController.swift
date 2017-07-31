@@ -38,6 +38,9 @@ class ViewController: UIViewController {
             //在初始化物件時，輸入物件變數用的資料
             let httpbinOrgJson = HttpbinOrgJson(origin: origin, url: url)
             print(httpbinOrgJson)
+            
+            let httpbinOrgJson2 = HttpbinOrgJson()
+            print(httpbinOrgJson2)
         }
     }
     
