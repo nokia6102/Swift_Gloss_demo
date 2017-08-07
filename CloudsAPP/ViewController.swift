@@ -8,9 +8,10 @@
 
 import UIKit
 import Alamofire
+import Gloss
 
 class ViewController: UIViewController {
-    var apiGithubComJsons: [ApiGithubComJson] = []//用來放 completion 傳來的資料
+    var apiGithubComJsons: [ApiGithubComJsonGloss] = []//用來放 completion 傳來的資料
     
     override func viewDidLoad() {
         super.viewDidLoad()
