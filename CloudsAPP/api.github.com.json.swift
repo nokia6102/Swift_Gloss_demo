@@ -5,18 +5,31 @@ struct ApiGithubComJson {
     
     let id: Int
     let name: String
+    let owner: (
+    login: String,
+    id: Int,
+    site_admin: Bool
+    )
 }
 
 extension ApiGithubComJson {//傳入 dictionary 解出我們要的東西
     
-    init?(dictionary: [String: Any]) {
-        guard let id = dictionary["id"] as? Int,
-            let name = dictionary["name"] as? String else {
+    init?(dictionaryInput: [String: Any]) {
+        guard let id = dictionaryInput["id"] as? Int,
+            let name = dictionaryInput["name"] as? String else {
+                return nil
+        }
+        
+        guard let dictionaryOwner = dictionaryInput["owner"] as? [String: Any],
+            let login = dictionaryOwner["login"] as? String,
+            let owner_id = dictionaryOwner["id"] as? Int,
+            let site_admin = dictionaryOwner["site_admin"] as? Bool else {
                 return nil
         }
         
         self.id = id
         self.name = name
+        self.owner = (login, owner_id, site_admin)
     }
 }
 
